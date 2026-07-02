@@ -10,8 +10,3 @@ The goal of this project is to find those unused snapshots and remove them autom
 
 - `lambda_function.py` - the function itself.
 - `iam-policy.json` - the permissions the function's role needs.
-
-## Notes
-
-- Lambda's default timeout is 3 seconds, which isn't enough for this function once an account has more than a handful of snapshots/volumes. Bump the timeout to at least 30 seconds under Configuration > General configuration.
-- API calls aren't paginated, so on an account with a very large number of snapshots or volumes, only the first page of results would be seen.
