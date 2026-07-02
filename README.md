@@ -42,12 +42,12 @@ confident it's correct.
    - Choose "Lambda" as the trusted entity.
    - Attach a policy: create a new one and paste in the contents of
      `iam-policy.json`.
-   - Name the role something like `ebs-snapshot-cleanup-role`.
+   - Name the role something like `ebs-snapshot-role`.
 
 2. **Create the Lambda function**
    - Go to Lambda -> Create function.
    - Choose "Author from scratch."
-   - Runtime: Python 3.12.
+   - Runtime: Python 3.14.
    - Execution role: use the role you just created.
    - Once created, paste the contents of `lambda_function.py` into the
      inline code editor (replacing the default code), and click
