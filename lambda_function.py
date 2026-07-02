@@ -1,6 +1,4 @@
 """
-EBS Snapshot Cleanup - Lambda function
-
 1. Get a list of all EBS snapshots we own.
 2. Get a list of all EBS volumes we own, and note which ones are
    actually attached to something.
