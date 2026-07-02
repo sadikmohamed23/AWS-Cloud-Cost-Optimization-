@@ -3,7 +3,7 @@ Finds EBS snapshots that aren't being used anymore and deletes them.
 
 A snapshot gets deleted if it's older than MIN_AGE_DAYS, isn't backing
 an AMI, and its volume is either gone or not attached to anything.
-Set DRY_RUN to "false" to actually delete instead of just logging.
+
 """
 
 import os
