@@ -1,4 +1,4 @@
-# EBS Snapshot Cleanup
+# Identifying Stale Snapshots
 
 A Lambda function that finds EBS snapshots that aren't being used
 anymore and deletes them, to save on storage cost.
