@@ -35,7 +35,7 @@ confident it's correct.
 - `iam-policy.json` -- the permissions the function's execution role
   needs.
 
-## How to deploy it (AWS Console, no extra tools required)
+## How to deploy it 
 
 1. **Create the IAM role**
    - Go to IAM -> Roles -> Create role.
