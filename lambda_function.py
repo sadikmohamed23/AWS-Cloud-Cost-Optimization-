@@ -1,23 +1,11 @@
 """
-1. Get a list of all EBS snapshots we own.
-2. Get a list of all EBS volumes we own, and note which ones are
-   actually attached to something.
-3. Get a list of snapshots that are being used as the backing image
-   for an AMI (so we know not to touch those).
-4. For each snapshot: if it's old enough, AND it's not protecting an
-   AMI, AND its volume is either gone or not attached to anything --
-   it's "stale," so we delete it (or just log it, if DRY_RUN is on).
+Finds EBS snapshots that aren't being used anymore and deletes them.
 
-Environment variables (set these in the Lambda console or in your
-deployment config):
-  DRY_RUN       "true" or "false". If "true" (default), nothing gets
-                deleted -- we only print what we WOULD delete. Always
-                start with this on.
-  MIN_AGE_DAYS  How many days old a snapshot must be before we're
-                willing to delete it. Default is 30. This protects
-                against deleting something that was just created a
-                few minutes ago (e.g. mid-migration).
+A snapshot gets deleted if it's older than MIN_AGE_DAYS, isn't backing
+an AMI, and its volume is either gone or not attached to anything.
+Set DRY_RUN to "false" to actually delete instead of just logging.
 """
+
 
 import os
 import boto3
