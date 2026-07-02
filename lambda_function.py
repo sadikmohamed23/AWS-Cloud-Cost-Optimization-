@@ -60,7 +60,7 @@ def snapshot_is_old_enough(snapshot, min_age_days):
 
 
 def lambda_handler(event, context):
-    dry_run = os.environ.get("DRY_RUN", "false").lower() == "true"
+    dry_run = os.environ.get("DRY_RUN", "true").lower() == "true"
     min_age_days = int(os.environ.get("MIN_AGE_DAYS", "30"))
 
     try:
